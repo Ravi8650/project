@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,52 +6,76 @@
     <title>Ravi Calculator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div id="calculator">
-      <input id="display" type="text" readonly />
-      <div class="button-conatiner">
-      <button class="button"  onclick="currentDisplay= '';
-       document.querySelector('#display').value= currentDisplay;" >C</button>
-      <button class="button" onclick="currentDisplay=currentDisplay + '1';
-       document.querySelector('#display').value= currentDisplay;">1</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '2';
-       document.querySelector('#display').value= currentDisplay;">2</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '+';
-       document.querySelector('#display').value= currentDisplay;">+</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '3';
-       document.querySelector('#display').value= currentDisplay;">3</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '4';
-       document.querySelector('#display').value= currentDisplay;">4</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '-';
-       document.querySelector('#display').value= currentDisplay;">-</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '5';
-       document.querySelector('#display').value= currentDisplay;">5</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '6';
-       document.querySelector('#display').value= currentDisplay;">6</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '*';
-       document.querySelector('#display').value= currentDisplay;">*</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '7';
-       document.querySelector('#display').value= currentDisplay;">7</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '8';
-       document.querySelector('#display').value= currentDisplay;">8</button>
-      <button class="button"  onclick=" 
-      currentDisplay=currentDisplay + '/';
-       document.querySelector('#display').value= currentDisplay;">/</button>
-      <button class="button"  onclick="
-      currentDisplay = eval(currentDisplay);
-     
-       document.querySelector('#display').value= currentDisplay;">=</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '9';
-       document.querySelector('#display').value= currentDisplay;">9</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '0';
-       document.querySelector('#display').value= currentDisplay;">0</button>
-      <button class="button"  onclick="currentDisplay=currentDisplay + '.';
-       document.querySelector('#display').value= currentDisplay;">.</button>
-    </div>
-    </div>
-    <script >
-let currentDisplay = '';
-document.querySelector('#display').value= currentDisplay;
-    </script>
+    <!-- Decorative Background Elements -->
+    <div class="circle circle-top"></div>
+    <div class="circle circle-small-left"></div>
+    <div class="circle circle-small-right"></div>
+    <div class="circle circle-bottom"></div>
+    <div class="dots dots-left"></div>
+    <div class="dots dots-right"></div>
+    <div class="dots dots-bottom"></div>
+
+    <!-- Floating Math Symbols -->
+    <div class="floating-symbol plus-one">+</div>
+    <div class="floating-symbol plus-two">+</div>
+    <div class="floating-symbol minus-one">−</div>
+    <div class="floating-symbol divide-one">÷</div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <!-- Header -->
+      <section class="header">
+        <div class="title-row">
+          <div class="calculator-icon">🧮</div>
+
+          <div>
+            <h1>Simple Calculator</h1>
+            <p>Perform basic calculations with ease</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculator -->
+      <section id="calculator">
+        <!-- Display -->
+        <input
+          id="display"
+          type="text"
+          value="0"
+          readonly
+          aria-label="Calculator display"
+        />
+
+        <!-- Buttons -->
+        <div class="button-container">
+          <button class="button clear" data-value="C">C</button>
+          <button class="button" data-value="1">1</button>
+          <button class="button" data-value="2">2</button>
+
+          <button class="button operator" data-value="+">+</button>
+          <button class="button" data-value="3">3</button>
+          <button class="button" data-value="4">4</button>
+
+          <button class="button operator" data-value="-">−</button>
+          <button class="button" data-value="5">5</button>
+          <button class="button" data-value="6">6</button>
+
+          <button class="button operator" data-value="*">×</button>
+          <button class="button" data-value="7">7</button>
+          <button class="button" data-value="8">8</button>
+
+          <button class="button operator" data-value="/">÷</button>
+          <button class="button" data-value="9">9</button>
+          <button class="button zero" data-value="0">0</button>
+          <button class="button equals" data-value="=">=</button>
+
+          <button class="button" data-value=".">.</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
